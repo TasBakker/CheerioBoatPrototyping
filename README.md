@@ -7,7 +7,7 @@ The information provided is from the current preprint: [Wilt, J. K., Schramma, N
 
 ## Materials and Equipment ##
 
-**3D Printer:** Ultimaker S3 fused filament fabrication (FFF) machine. 
+**3D Printer:** Ultimaker S2+ fused filament fabrication (FFF) machine. 
 
 **Printing Material:** Polylactic acid (PLA) thermoplastic. In this study, red PLA was used, but any color is suitable. PLA is moderately biodegradable (under certain conditions). Alternative materials can be used while considering their density; biodegradable options are preferred for environmental sustainability.
 
