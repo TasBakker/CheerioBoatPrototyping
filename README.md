@@ -13,19 +13,19 @@ The information provided is from the current preprint: [Wilt, J. K., Schramma, N
 
 ## File Formats and Designs ##
 
-Designs were created in a Computer Aided Design (CAD) program. Examples of open source programs are [FreeCAD](https://www.freecad.org/) or potentially with an educational license [Fusion360](https://www.autodesk.com/campaigns/education/fusion-360-education?mktvar002=4246565|SEM|11094403127|142663428892|kwd-377987916670&ef_id=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE:G:s&s_kwcid=AL!11172!3!602367525071!p!!g!!fusion360%20education!11094403127!142663428892&mkwid=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|pid|&utm_medium=cpc&utm_source=google&utm_campaign=&utm_term=fusion360%20education&utm_content=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|&gad_source=1&gclid=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE). File types included are stereolithography (STL) files which are 3D files ready to be 3D printed and STEP files which you can import to your CAD program to modify!
+Designs were created in a Computer-Aided Design (CAD) program. Examples of open source programs are [FreeCAD](https://www.freecad.org/) or potentially with an educational license [Fusion360](https://www.autodesk.com/campaigns/education/fusion-360-education?mktvar002=4246565|SEM|11094403127|142663428892|kwd-377987916670&ef_id=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE:G:s&s_kwcid=AL!11172!3!602367525071!p!!g!!fusion360%20education!11094403127!142663428892&mkwid=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|pid|&utm_medium=cpc&utm_source=google&utm_campaign=&utm_term=fusion360%20education&utm_content=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|&gad_source=1&gclid=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE). File types included are stereolithography (STL) files which are 3D files ready to be 3D printed and STEP files which you can import to your CAD program to modify!
 
 **Files in this repository:**
 
 **SingleOutlet_cheerio** - Single-hole outlet design as the primary cheerio in the study for ballistic-like movement.
 
-**DualOutlet_cheerio** - Two-outlet design particle used less in study for complex instability. 
+**DualOutlet_cheerio** - Two-outlet design particle used less in the study for complex instability. 
 
-**Chiral_cheerio** - Chiral device (Spinning cheerio in the study) 
+**Chiral_cheerio** - Chiral device used as a spinning cheerio in the study.
 
-**trackingcap** - Tracking caps used for computer vison and tracking of the Cheerios which were colored with paint markers) -
+**trackingcap** - Tracking caps used for computer vision and tracking of the Cheerios, which were colored with paint markers.
 
-**Extra_Designs** - Plus exploratory designs for customization in the extra folder that contains "hare-brained" ideas with heavily modified Cheerios and additional addornemtns to make interesting interparticle interactions.
+**Extra_Designs**—The extra folder contains exploratory designs for customization, including "hare-brained" ideas, heavily modified Cheerios and additional adornments to create interesting interparticle interactions.
 
 ## Printing Settings ##
 
@@ -40,5 +40,5 @@ Load the STL or STEP file into your slicing software. Choose the desired layer r
 
 ## Notes for Users ##
 
-Exploration and Customization: The additional designs not included in the study are provided for further experimentation. STEP files allow users to modify dimensions and adapt designs in CAD software.If using non-PLA materials, consider their environmental impact and compatibility with water-based operation and disposal procedure after use. By following these instructions, you can successfully fabricate and experiment with Cheerios-inspired devices for use on water surfaces. Adjust and innovate based on your specific needs and applications!
+Exploration and Customization: The additional designs not included in the study are provided for further experimentation. STEP files allow users to modify dimensions and adapt designs in CAD software. If using non-PLA materials, consider their environmental impact and compatibility with water-based operation and disposal procedure after use. By following these instructions, you can successfully fabricate and experiment with Cheerios-inspired devices for use on water surfaces. Adjust and innovate based on your specific needs and applications!
 
