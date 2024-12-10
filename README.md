@@ -19,13 +19,13 @@ Designs were created in a Computer Aided Design (CAD) program. Examples of open 
 
 **SingleOutlet_cheerio** - Single-hole outlet design as the primary cheerio in the study for ballistic-like movement.
 
-**Dualoutlet_cheerio** - Two-outlet design particle used less in study for complex instability. 
+**DualOutlet_cheerio** - Two-outlet design particle used less in study for complex instability. 
 
 **Chiral_cheerio** - Chiral device (Spinning cheerio in the study) 
 
 **trackingcap** - Tracking caps used for computer vison and tracking of the Cheerios which were colored with paint markers) -
 
-**Extra Designs** - Plus exploratory designs for customization in the extra folder that contains "hare-brained" ideas with heavily modified Cheerios and additional addornemtns to make interesting interparticle interactions.
+**Extra_Designs** - Plus exploratory designs for customization in the extra folder that contains "hare-brained" ideas with heavily modified Cheerios and additional addornemtns to make interesting interparticle interactions.
 
 ## Printing Settings ##
 
