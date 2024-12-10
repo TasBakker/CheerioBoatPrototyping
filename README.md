@@ -9,15 +9,17 @@ The information provided is from the current preprint: Wilt, J. K., Schramma, N.
 
 **3D Printer:** Ultimaker S3 fused filament fabrication (FFF) machine. 
 
-**Printing Material: **Polylactic acid (PLA) thermoplastic. In this study, red PLA was used, but any color is suitable. PLA is moderately biodegradable (under certain conditions), and other biodegradable materials are recommended for environmental considerations. Alternative materials can be used while considering their density; biodegradable options are preferred for environmental sustainability.
+**Printing Material:** Polylactic acid (PLA) thermoplastic. In this study, red PLA was used, but any color is suitable. PLA is moderately biodegradable (under certain conditions). Alternative materials can be used while considering their density; biodegradable options are preferred for environmental sustainability.
 
 ## File Formats and Designs ##
 
-Single-hole outlet design (predominantly used in the study)
+Single-hole outlet design (primary cheerio in the study for ballistic-like movement) - Cheerio
 
-Chiral device (predominantly used in the study)
+Chiral device (Spinning cheerio in the study) - Chiral_cheerio.step & Chiral_cheerio.stl
 
-Two-outlet design and other exploratory designs for customization. File Formats: STL (Stereolithography): For direct 3D printing. STEP: For importing into CAD programs, allowing further customization and dimension extraction.
+Two-outlet design () - Dualoutlet_cheerio.step & Dualoutlet_cheerio.stl
+
+and other exploratory designs for customization. File Formats: STL (Stereolithography): For direct 3D printing. STEP: For importing into CAD programs, allowing further customization and dimension extraction.
 
 ## Printing Settings ##
 
