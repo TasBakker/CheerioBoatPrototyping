@@ -4,7 +4,7 @@
 This guide provides detailed steps to fabricate Cheerios-inspired devices that are 3D printable and designed to operate on the surface of water.
 The information provided is from the current preprint: Wilt, J. K., Schramma, N., Bottermans, J. W., & Jalaal, M. (2024). "ActiveCheerios: 3D-Printed Marangoni-Driven Active Particles at an Interface." arXiv preprint arXiv:2411.16011.
 
-### Materials and Equipment ###
+#### Materials and Equipment ####
 
 3D Printer: Ultimaker S3 fused filament fabrication (FFF) machine. 
 Printing Material: Polylactic acid (PLA) thermoplastic. In this study, red PLA was used, but any color is suitable. PLA is moderately biodegradable (under certain conditions), and other biodegradable materials are recommended for environmental considerations.
