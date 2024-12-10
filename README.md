@@ -1,7 +1,7 @@
 # Guide for Active Cheerio 3D-printing
 ![printprocess](https://github.com/user-attachments/assets/07f0eeb4-acfe-40e5-a2db-4edd8781d27b)
 
-This guide provides detailed steps to fabricate Cheerios-inspired devices that are 3D printable and designed to operate on the surface of water.
+This guide provides detailed steps to fabricate Alcohol-powered Cheerios-inspired devices that are 3D printable and designed to operate on the surface of water.
 
 The information provided is from the current preprint: [Wilt, J. K., Schramma, N., Bottermans, J. W., & Jalaal, M. (2024). "ActiveCheerios: 3D-Printed Marangoni-Driven Active Particles at an Interface." arXiv preprint arXiv:2411.16011.](https://arxiv.org/pdf/2411.16011)
 
