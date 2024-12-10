@@ -3,7 +3,7 @@
 
 This guide provides detailed steps to fabricate Cheerios-inspired devices that are 3D printable and designed to operate on the surface of water.
 
-The information provided is from the current preprint: [Wilt, J. K., Schramma, N., Bottermans, J. W., & Jalaal, M. (2024). "ActiveCheerios: 3D-Printed Marangoni-Driven Active Particles at an Interface." arXiv preprint arXiv:2411.16011.](https://arxiv.org/abs/2411.16011).
+The information provided is from the current preprint: [Wilt, J. K., Schramma, N., Bottermans, J. W., & Jalaal, M. (2024). "ActiveCheerios: 3D-Printed Marangoni-Driven Active Particles at an Interface." arXiv preprint arXiv:2411.16011.](https://arxiv.org/pdf/2411.16011)
 
 ## Materials and Equipment ##
 
@@ -13,15 +13,17 @@ The information provided is from the current preprint: [Wilt, J. K., Schramma, N
 
 ## File Formats and Designs ##
 
-Designs were created in a Computer Aided Design program. Examples of open source programs are [FreeCAD](https://www.freecad.org/) or potentially with an educational license [Fusion360](https://www.autodesk.com/campaigns/education/fusion-360-education?mktvar002=4246565|SEM|11094403127|142663428892|kwd-377987916670&ef_id=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE:G:s&s_kwcid=AL!11172!3!602367525071!p!!g!!fusion360%20education!11094403127!142663428892&mkwid=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|pid|&utm_medium=cpc&utm_source=google&utm_campaign=&utm_term=fusion360%20education&utm_content=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|&gad_source=1&gclid=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE)
+Designs were created in a Computer Aided Design (CAD) program. Examples of open source programs are [FreeCAD](https://www.freecad.org/) or potentially with an educational license [Fusion360](https://www.autodesk.com/campaigns/education/fusion-360-education?mktvar002=4246565|SEM|11094403127|142663428892|kwd-377987916670&ef_id=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE:G:s&s_kwcid=AL!11172!3!602367525071!p!!g!!fusion360%20education!11094403127!142663428892&mkwid=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|pid|&utm_medium=cpc&utm_source=google&utm_campaign=&utm_term=fusion360%20education&utm_content=s|pcrid|602367525071|pkw|fusion360%20education|pmt|p|pdv|c|slid||pgrid|142663428892|ptaid|kwd-377987916670|&gad_source=1&gclid=CjwKCAiA6t-6BhA3EiwAltRFGPIyp9j75XEVfvkBnsBDCAecH_xo9sXrgq0ZP6SiswMxOjQ8qb3auRoC53MQAvD_BwE). File types included are stereolithography (STL) files which are 3D files ready to be 3D printed and STEP files which you can import to your CAD program to modify!
 
-Single-hole outlet design (primary cheerio in the study for ballistic-like movement) - Cheerio
+**SingleOutlet_Cheerios.step & SingleOutlet_Cheerios.stl** - Single-hole outlet design (primary cheerio in the study for ballistic-like movement)
 
-Chiral device (Spinning cheerio in the study) - Chiral_cheerio.step & Chiral_cheerio.stl
+**Dualoutlet_cheerio.step & Dualoutlet_cheerio.stl** - Two-outlet design (particle used less in study for complex instability) - 
 
-Two-outlet design () - Dualoutlet_cheerio.step & Dualoutlet_cheerio.stl
+**Chiral_cheerio.step & Chiral_cheerio.stl** - Chiral device (Spinning cheerio in the study) 
 
-and other exploratory designs for customization. File Formats: STL (Stereolithography): For direct 3D printing. STEP: For importing into CAD programs, allowing further customization and dimension extraction.
+**trackingcap.step & trackingcap.stl** - Tracking cap (used for computer vison and tracking of the Cheerios which were colored with paint markers) -
+
+**Extra Designs** - Plus exploratory designs for customization in the extra folder that contains "hare-brained" ideas with heavily modified Cheerios and additional addornemtns to make interesting interparticle interactions.
 
 ## Printing Settings ##
 
