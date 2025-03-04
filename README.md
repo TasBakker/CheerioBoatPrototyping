@@ -1,3 +1,6 @@
+# Fork for course Prototyping
+This is a fork of an existing project for use in the course prototyping.
+
 # Guide for Active Cheerio 3D-printing
 ![printprocess](https://github.com/user-attachments/assets/07f0eeb4-acfe-40e5-a2db-4edd8781d27b)
 
