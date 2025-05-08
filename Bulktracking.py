@@ -1,3 +1,6 @@
+# Special thanks to Jackson Wilt, Nico Schramma & Vera Horjus for providing 
+# code on which this notebook is based on.
+
 import cv2
 import numpy as np
 import pims
