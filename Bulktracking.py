@@ -10,11 +10,11 @@ from rich.progress import track
 warnings.simplefilter(action='ignore', category=FutureWarning)
 tp.quiet(True)
 
-directory_path = r'Tracking_videos' # De folder waar de videos in staan (dit neemt ook subfolders mee)
+directory_path = r'Tracking_videos\6-5-2025_Luk' # De folder waar de videos in staan (dit neemt ook subfolders mee)
 graphs_path = r'Tracking_plots' # De folders waar de plots in uitkomen
 shorten = 1
 reducefps = 9
-colorthreshold = 0.25
+colorthreshold = 0.3
 
 velocitydata = []
 filepaths = []
@@ -35,11 +35,11 @@ for file in filepaths:
 print('\n')
 
 def locate_dots(frames, shorten=1, reducefps=12, colorthreshold=0.3):
-    circstore = [] # list of lists with tuples containing the info of the circles per frame
     positions= [] #lists to be filled with their respective frame types
 
     for i in track(range(0,int(len(frames)/shorten),reducefps),'Processing frames'):
-        r,gr,b = cv2.split(frames[i]) # split the color image into different channels    
+        r,gr,b = cv2.split(frames[i]) # split the color image into different channels   
+        # gr =  np.zeros_like(gr, np.uint8)
         blurthis = (abs((r/255)-(gr/255))+abs((gr/255)-(b/255))+abs((r/255)-(b/255))) # calculate the color difference for each pixel from 0-1 (this highlights pixels with a lot of a single color)
 
         blurthis[blurthis>=colorthreshold] = 255 # set color difference values above a threshold to max intensity
@@ -47,9 +47,8 @@ def locate_dots(frames, shorten=1, reducefps=12, colorthreshold=0.3):
         blur = cv2.medianBlur(np.uint8(blurthis), ksize=9) # blur to help houghcircles. If all went well, only the colored dots on the cheerioboat remain.
 
         circles = cv2.HoughCircles(blur, cv2.HOUGH_GRADIENT, dp=1.5, minDist=35, param1=60, param2=10, minRadius=4, maxRadius=20) # actually find the circles in the edited image  #60,10
-        circles = np.uint16(np.around(circles)) # round the found circle positions and radii
-        
-        circstore.append(circles) # save the positions and radii of the circles
+        try: circles = np.uint16(np.around(circles)) # round the found circle positions and radii
+        except: continue
 
         background = np.zeros_like(blur, np.uint8) # create a black greyscale background 
     
@@ -60,15 +59,21 @@ def locate_dots(frames, shorten=1, reducefps=12, colorthreshold=0.3):
         positions.append(background)
 
     f = tp.batch(positions, diameter=5, minmass=20, processes=1, invert=False)#37
-    t = tp.link(f, search_range=120, memory=10)# WAS 90
+    t = tp.link(f, search_range=120, memory=20, adaptive_stop=40)# WAS 90
         
     return t
 
 for file in filepaths:
     filename = file.split('\\')[-1].removesuffix('.mp4')
+
+    # if '60_deg_fins_1' not in filename: continue
+
     print(f'Starting: {file.split('\\')[-1]}')
     frames = pims.Video(file)
+    duration = frames.duration
 
+    if "6-5-2025_Luk" in file:
+        frames = [frame[490: 1750, :] for frame in frames]
     t = locate_dots(frames, shorten, reducefps, colorthreshold)
 
     particles = list(set(t['particle']))
@@ -83,7 +88,8 @@ for file in filepaths:
             dy = float((tt.loc[tt['particle'] == particles[1], ['y']]).iloc[0]) - float((tt.loc[tt['particle'] == particles[0], ['y']]).iloc[0])
             theta.append(np.arctan(np.abs(dy/dx)))
         except: # if a frame does not have every particle, repeat the previous value
-            theta.append(theta[-1])
+            try: theta.append(theta[-1])
+            except: theta.append(0)
 
     omega = (np.insert(theta, 0, 0) - np.insert(theta, -1, 0))[1:-1] / (np.insert(framelist, 0, 0) - np.insert(framelist, -1, 0))[1:-1]
 
@@ -104,7 +110,7 @@ for file in filepaths:
     ax2.set_ylabel('angular velocity (radians/frame)')
     ax2.set_xlim(min(framelist), max(framelist))
 
-    fig.savefig(f'{graphs_path}\\angular_data_{filename}.png', dpi=500)
+    fig.savefig(f'{graphs_path}\\angular_data_{filename}.png', dpi=500,bbox_inches='tight')
     fig.clear()
 
     # velocity part
@@ -118,7 +124,7 @@ for file in filepaths:
             ds = np.sqrt((tt['x'].iloc[j] - tt['x'].iloc[j - 1])**2 + (tt['y'].iloc[j] - tt['y'].iloc[j - 1])**2)
             S = S + ds
         displacement.append(S)
-        averageSpeed.append(S/frames.duration)
+        averageSpeed.append(S/duration)
 
     velocitydata.append((filename, pd.DataFrame({
                                                 'particle':  list(set(t['particle'])),
@@ -137,7 +143,7 @@ for file in filepaths:
 
     plt.title(f'{filename}')
     plt.imshow(frames[0], zorder = -20)
-    plt.savefig(f'{graphs_path}\\trajectories_{filename}.png', dpi=500)
+    plt.savefig(f'{graphs_path}\\trajectories_{filename}.png', dpi=500, bbox_inches='tight')
     plt.close('all')
 
 
