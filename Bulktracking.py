@@ -10,7 +10,7 @@ from rich.progress import track
 warnings.simplefilter(action='ignore', category=FutureWarning)
 tp.quiet(True)
 
-directory_path = r'Tracking_videos\6-5-2025_Luk' # De folder waar de videos in staan (dit neemt ook subfolders mee)
+directory_path = r'Tracking_videos\6-5-2025_fins_0.02mmTOL' # De folder waar de videos in staan (dit neemt ook subfolders mee)
 graphs_path = r'Tracking_plots' # De folders waar de plots in uitkomen
 shorten = 1
 reducefps = 9
@@ -112,8 +112,29 @@ for file in filepaths:
 
     fig.savefig(f'{graphs_path}\\angular_data_{filename}.png', dpi=500,bbox_inches='tight')
     fig.clear()
+    plt.clf()
 
     # velocity part
+    # calculate the centre of the boat
+    x = []
+    y = []
+
+    for framenr in framelist:
+        try:
+            x.append(0.5 * sum(t.loc[t['frame'] == framenr]['x']))
+            y.append(0.5 * sum(t.loc[t['frame'] == framenr]['y']))
+        except:
+            try: 
+                x.append(x[-1])
+                y.append(y[-1])
+            except:
+                x.append(0)
+                y.append(0)
+
+    v_x = (np.insert(x, 0, 0) - np.insert(x, -1, 0))[1:-1] / (np.insert(framelist, 0, 0) - np.insert(framelist, -1, 0))[1:-1]
+    v_y = (np.insert(y, 0, 0) - np.insert(y, -1, 0))[1:-1] / (np.insert(framelist, 0, 0) - np.insert(framelist, -1, 0))[1:-1]
+    velocity = np.sqrt(np.square(x) + np.square(y))
+
     displacement = []
     averageSpeed = []
     for i in list(set(t['particle'])):
@@ -125,6 +146,14 @@ for file in filepaths:
             S = S + ds
         displacement.append(S)
         averageSpeed.append(S/duration)
+
+    plt.title(f'{filename}')
+    plt.plot(framelist, velocity)
+    plt.xlabel('frame nr')
+    plt.ylabel('velocity (pixels/frame)')
+    plt.xlim(min(framelist), max(framelist))
+    plt.savefig(f'{graphs_path}\\velocity_{filename}.png', dpi=500, bbox_inches='tight')
+    plt.clf()
 
     velocitydata.append((filename, pd.DataFrame({
                                                 'particle':  list(set(t['particle'])),
@@ -144,6 +173,7 @@ for file in filepaths:
     plt.title(f'{filename}')
     plt.imshow(frames[0], zorder = -20)
     plt.savefig(f'{graphs_path}\\trajectories_{filename}.png', dpi=500, bbox_inches='tight')
+    plt.clf()
     plt.close('all')
 
 
