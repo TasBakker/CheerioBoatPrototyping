@@ -13,7 +13,7 @@ tp.quiet(True)
 directory_path = r'Tracking_videos' # De folder waar de videos in staan (dit neemt ook subfolders mee)
 graphs_path = r'Tracking_plots' # De folders waar de plots in uitkomen
 shorten = 1
-reducefps = 12
+reducefps = 9
 colorthreshold = 0.25
 
 velocitydata = []
@@ -59,8 +59,8 @@ def locate_dots(frames, shorten=1, reducefps=12, colorthreshold=0.3):
 
         positions.append(background)
 
-    f = tp.batch(positions, diameter=5, minmass=20, processes=0, invert=False)#37
-    t = tp.link(f, search_range=200, memory=90)# WAS 90
+    f = tp.batch(positions, diameter=5, minmass=20, processes=1, invert=False)#37
+    t = tp.link(f, search_range=120, memory=10)# WAS 90
         
     return t
 
