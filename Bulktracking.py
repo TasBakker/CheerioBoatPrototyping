@@ -1,5 +1,7 @@
-# Special thanks to Jackson Wilt, Nico Schramma & Vera Horjus for providing 
-# code on which this notebook is based on.
+# Special thanks to Jackson Wilt, Nico Schramma & Vera Horjus  
+# for providing the code on which this notebook is based on.
+# Check the notebook for more explanation on what is hapenning
+# This program also provides a dump of the tracking data in a .txt file if needed.
 
 import cv2
 import numpy as np
@@ -13,8 +15,8 @@ from rich.progress import track
 warnings.simplefilter(action='ignore', category=FutureWarning)
 tp.quiet(True)
 
-directory_path = r'Tracking_videos\6-5-2025_Luk' # De folder waar de videos in staan (dit neemt ook subfolders mee)
-graphs_path = r'Tracking_plots' # De folders waar de plots in uitkomen
+directory_path = r'Tracking_videos\6-5-2025' # The directory where the video files are located
+graphs_path = r'Tracking_plots' # The directory where the resulting plots should be stored
 shorten = 1
 reducefps = 6
 colorthreshold = 0.25
@@ -192,5 +194,3 @@ for data in velocitydata:
 with open("trackingdata.txt", 'w') as output:
     for row in filedata:
         output.write(str(row) + '\n')
-
-max_frame = 0
