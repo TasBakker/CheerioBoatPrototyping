@@ -1,6 +1,6 @@
 # Fork for course Prototyping
 This is a fork of an existing project for use in the course prototyping. The original repository is located at: https://github.com/FluidLab/Active_Cheerio_3Dprinting. 
-Big thanks to Jared, Vera and Mike for helping us and providing the base for the tracking code.
+Big thanks to Jared, Vera and Mike for guiding and helping us and providing the base for the tracking code.
 
 # Guide for Active Cheerio 3D-printing
 ![printprocess](https://github.com/user-attachments/assets/07f0eeb4-acfe-40e5-a2db-4edd8781d27b)
