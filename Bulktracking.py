@@ -1,5 +1,7 @@
-# Special thanks to Jackson Wilt, Nico Schramma & Vera Horjus for providing 
-# code on which this notebook is based on.
+# Special thanks to Jackson Wilt, Nico Schramma & Vera Horjus  
+# for providing the code on which this notebook is based on.
+# Check the notebook for more explanation on what is hapenning
+# This program also provides a dump of the tracking data in a .txt file if needed.
 
 import cv2
 import numpy as np
@@ -13,12 +15,13 @@ from rich.progress import track
 warnings.simplefilter(action='ignore', category=FutureWarning)
 tp.quiet(True)
 
-directory_path = r'Tracking_videos\6-5-2025_fins_0.02mmTOL' # De folder waar de videos in staan (dit neemt ook subfolders mee)
-graphs_path = r'Tracking_plots' # De folders waar de plots in uitkomen
+directory_path = r'Tracking_videos\6-5-2025' # The directory where the video files are located
+graphs_path = r'Tracking_plots' # The directory where the resulting plots should be stored
 shorten = 1
-reducefps = 9
-colorthreshold = 0.3
+reducefps = 6
+colorthreshold = 0.25
 
+filedata = []
 velocitydata = []
 filepaths = []
 
@@ -124,8 +127,8 @@ for file in filepaths:
 
     for framenr in framelist:
         try:
-            x.append(0.5 * sum(t.loc[t['frame'] == framenr]['x']))
-            y.append(0.5 * sum(t.loc[t['frame'] == framenr]['y']))
+            x.append(sum(t.loc[t['frame'] == framenr]['x']) / len(t.loc[t['frame'] == framenr]['x']))
+            y.append(sum(t.loc[t['frame'] == framenr]['y']) / len(t.loc[t['frame'] == framenr]['x']))
         except:
             try: 
                 x.append(x[-1])
@@ -179,7 +182,7 @@ for file in filepaths:
     plt.clf()
     plt.close('all')
 
-
+    filedata.append((filename, list(framelist), list(theta), list(omega), list(velocity)))
 
 print('FINISHED ALL TRACKING ANALYSES')
 
@@ -187,6 +190,7 @@ print('\n velocity results:')
 for data in velocitydata:
     print(data[0], '\n', data[1], '\n')
 
-
-
-
+# save the data to a txt file as I am lazy (you can read it in with the open() and eval() functions)
+with open("trackingdata.txt", 'w') as output:
+    for row in filedata:
+        output.write(str(row) + '\n')
